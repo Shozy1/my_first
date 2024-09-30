@@ -6,6 +6,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 import openai 
 
+
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+def get_interpretation(data_description):
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",  # Specify the model you want to use
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": data_description}
+        ]
+    )
+    return response['choices'][0]['message']['content']
+
+
+
+
 #Title of the work
 st.title('Forcasting External Sector Variables')
 
