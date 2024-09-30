@@ -4,12 +4,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import openai 
+
 #Title of the work
 st.title('Forcasting External Sector Variables')
 
 st.info('Become an External Sector Expert')
 
-
+# Set your OpenAI API key
+openai.api_key = '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'
 
 
 # Create a navigation menu
@@ -60,4 +63,19 @@ with st.expander('Data Visualization'):
     # Display the plot in Streamlit
     st.pyplot(fig)
     
-   
+   # Function to generate AI interpretation
+def get_interpretation(data_description):
+    prompt = f"Based on the following data description, provide an interpretation: {data_description}"
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=150
+    )
+    return response['choices'][0]['message']['content']
+
+# Collecting the description for interpretation
+data_description = "This chart displays inflation rates (INF_Nig and INF_US) and exchange rates (EXR) over a specified period."
+if st.button('Get AI Interpretation'):
+    interpretation = get_interpretation(data_description)
+    st.write("AI Interpretation:")
+    st.write(interpretation)
