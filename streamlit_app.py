@@ -9,7 +9,7 @@ st.title('Forcasting External Sector Variables')
 
 st.info('Become an External Sector Expert')
 
-pip install matplotlib
+
 
 
 # Create a navigation menu
