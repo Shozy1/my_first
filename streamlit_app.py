@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import numpy as np
 st.title('Forcasting External Sector Variables')
 
 st.info('Become an External Sector Expert')
@@ -32,5 +32,11 @@ with st.expander("Data"):
   data = data.drop(['BDC'], axis=1)
   data
 
+data = pd.DataFrame({
+    "period": range(175),  # Example 'period' data from 0 to 174
+    "EXR": range(175),  # Replace with your actual EXR data
+    "INF_Nig": range(175),  # Replace with your actual INF_Nig data
+    "INF_US": range(175)  # Replace with your actual INF_US data
+})
 
-
+st.line_chart(data.set_index("period"))
