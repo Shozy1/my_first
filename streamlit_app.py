@@ -32,11 +32,5 @@ with st.expander("Data"):
   data = data.drop(['BDC'], axis=1)
   data
 
-data = pd.DataFrame({
-    "period": range(175),  # Example 'period' data from 0 to 174
-    "EXR": range(175),  # Replace with your actual EXR data
-    "INF_Nig": range(175),  # Replace with your actual INF_Nig data
-    "INF_US": range(175)  # Replace with your actual INF_US data
-})
-
-st.line_chart(data.set_index("period"))
+with st.expander ('Data Visualization')
+    st.scatter_chart(data=data, x='INF_US', 'EXR', 'INF_Nig', y='Period')
