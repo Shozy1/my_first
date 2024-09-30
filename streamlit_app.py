@@ -11,4 +11,4 @@ with st.expander("Data"):
 
 data = df.drop(df.columns[13:], axis=1)
 
-data = data.drop([BDC] axis=1)
+data = data.drop(['BDC'], axis=1)
