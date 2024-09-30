@@ -32,5 +32,15 @@ with st.expander("Data"):
   data = data.drop(['BDC'], axis=1)
   data
 
-with st.expander ('Data Visualization'):
-    st.scatter_chart(data=data, x='INF_US', 'EXR', 'INF_Nig', y='Period')
+with st.expander('Data Visualization'):
+    # Create a scatter plot
+    plt.figure(figsize=(10, 6))
+    plt.scatter(data['EXR'], data['INF_US'], label='INF_US', alpha=0.5)
+    plt.scatter(data['EXR'], data['INF_Nig'], label='INF_Nig', alpha=0.5)
+    plt.title('Scatter Plot of INF_US and INF_Nig against EXR')
+    plt.xlabel('EXR')
+    plt.ylabel('Inflation Rates')
+    plt.legend()
+    
+    # Display the plot in Streamlit
+    st.pyplot(plt)
