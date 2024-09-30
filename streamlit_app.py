@@ -1,11 +1,16 @@
+#importation of files
+
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+#Title of the work
 st.title('Forcasting External Sector Variables')
 
 st.info('Become an External Sector Expert')
 
-import streamlit as st
+pip install matplotlib
+
 
 # Create a navigation menu
 page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "Purchasing Power Parity", "PEER", "FEAR", "Google"])
