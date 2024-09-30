@@ -39,6 +39,15 @@ with st.expander("Data"):
 
 with st.expander('Data Visualization'):
     # Create a scatter plot
-    st.scatter_chart(data=df, x='EXR', y='Period', color='INF_Nig')
+    plt.figure(figsize=(10, 6))
+    plt.scatter(data['EXR'], data['INF_US'], label='INF_US', alpha=0.5)
+    plt.scatter(data['EXR'], data['INF_Nig'], label='INF_Nig', alpha=0.5)
+    plt.title('Scatter Plot of INF_US and INF_Nig against EXR')
+    plt.xlabel('EXR')
+    plt.ylabel('Inflation Rates')
+    plt.legend()
+    
+    # Display the plot in Streamlit
+    st.pyplot(plt)
     
    
