@@ -5,12 +5,25 @@ st.title('Forcasting External Sector Variables')
 
 st.info('Become an External Sector Expert')
 
-st.page_link("your_app.py", label="Home", icon="🏠")  # Home icon is fine.
-st.page_link("pages/BEER.py", label="BEER", icon="🍺")  # Beer mug icon for BEER.
-st.page_link("pages/PPP.py", label="Purchasing Power Parity", icon="💵")  # Money icon for PPP.
-st.page_link("pages/PEER.py", label="PEER", icon="👥")  # Two people icon for PEER (peer comparison).
-st.page_link("http://www.google.com", label="Google", icon="🌍")  # Globe icon is fine for Google.
-st.page_link("pages/FEAR.py", label="FEAR", icon="😱")
+import streamlit as st
+
+# Create a navigation menu
+page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "Purchasing Power Parity", "PEER", "FEAR", "Google"])
+
+# Define content for each page
+if page == "Home":
+    st.write("Welcome to the Home page! 🏠")
+elif page == "BEER":
+    st.write("Welcome to the BEER page! 🍺")
+elif page == "Purchasing Power Parity":
+    st.write("Welcome to the Purchasing Power Parity page! 💵")
+elif page == "PEER":
+    st.write("Welcome to the PEER page! 👥")
+elif page == "FEAR":
+    st.write("Welcome to the FEAR page! 😱")
+elif page == "Google":
+    st.write("[Visit Google 🌎](http://www.google.com)")
+
 
 with st.expander("Data"):
   st.write('**Raw data**')
