@@ -8,32 +8,11 @@ import openai
 
 
 
-import os
-from dotenv import load_dotenv
-
-load_dotenv()  # Load environment variables from .env file
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
-def get_interpretation(data_description):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # Specify the model you want to use
-        messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": data_description}
-        ]
-    )
-    return response['choices'][0]['message']['content']
-
-
-
 
 #Title of the work
 st.title('Forcasting External Sector Variables')
 
 st.info('Become an External Sector Expert')
-
-# Set your OpenAI API key
-openai.api_key = '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'
 
 
 # Create a navigation menu
@@ -84,19 +63,4 @@ with st.expander('Data Visualization'):
     # Display the plot in Streamlit
     st.pyplot(fig)
     
-   # Function to generate AI interpretation
-def get_interpretation(data_description):
-    prompt = f"Based on the following data description, provide an interpretation: {data_description}"
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=150
-    )
-    return response['choices'][0]['message']['content']
-
-# Collecting the description for interpretation
-data_description = "This chart displays inflation rates (INF_Nig and INF_US) and exchange rates (EXR) over a specified period."
-if st.button('Get AI Interpretation'):
-    interpretation = get_interpretation(data_description)
-    st.write("AI Interpretation:")
-    st.write(interpretation)
+ 
