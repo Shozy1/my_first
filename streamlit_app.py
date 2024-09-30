@@ -38,16 +38,26 @@ with st.expander("Data"):
   data
 
 with st.expander('Data Visualization'):
-    # Create a scatter plot
-    plt.figure(figsize=(10, 6))
-    plt.scatter(data['EXR'], data['INF_US'], label='INF_US', alpha=0.5)
-    plt.scatter(data['EXR'], data['INF_Nig'], label='INF_Nig', alpha=0.5)
-    plt.title('Scatter Plot of INF_US and INF_Nig against EXR')
-    plt.xlabel('EXR')
-    plt.ylabel('Inflation Rates')
-    plt.legend()
+    # Create a figure and a set of subplots
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+
+    # Plotting INF_US and INF_Nig on the primary y-axis
+    ax1.scatter(data['Period'], data['INF_US'], label='INF_US', alpha=0.5, color='blue')
+    ax1.scatter(data['Period'], data['INF_Nig'], label='INF_Nig', alpha=0.5, color='orange')
     
+    # Labels and title for the primary y-axis
+    ax1.set_title('Scatter Plot of Inflation Rates against Period')
+    ax1.set_xlabel('Period')
+    ax1.set_ylabel('Inflation Rates')
+    ax1.legend(loc='upper left')
+
+    # Creating a secondary y-axis for EXR
+    ax2 = ax1.twinx()
+    ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=2)
+    ax2.set_ylabel('EXR', color='green')  # Label for the secondary y-axis
+    ax2.tick_params(axis='y', labelcolor='green')
+
     # Display the plot in Streamlit
-    st.pyplot(plt)
+    st.pyplot(fig)
     
    
