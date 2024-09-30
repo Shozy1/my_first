@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
+st.title('Forcasting External Sector Variables')
 
-st.write('Hello world!')
+st.write('Become an External Sector Expert')
