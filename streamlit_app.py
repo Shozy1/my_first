@@ -32,5 +32,5 @@ with st.expander("Data"):
   data = data.drop(['BDC'], axis=1)
   data
 
-with st.expander ('Data Visualization')
+with st.expander ('Data Visualization'):
     st.scatter_chart(data=data, x='INF_US', 'EXR', 'INF_Nig', y='Period')
