@@ -111,7 +111,7 @@ with st.expander('Input features'):
 input_row = input_penguins[:1]
 y = input_penguins['EXR']
 #Data Preparation        
-with st.expander('Data Preparation')
+with st.expander('Data Preparation'):
     st.write('**Input Penguin**')
     input_row
     st.write('**y**')
