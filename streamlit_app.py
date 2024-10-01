@@ -59,7 +59,7 @@ with st.expander('Data Visualization'):
     # Display the plot in Streamlit
     st.pyplot(fig)
 
-INT_DIFF = INT_NIG - INT_US 
+
 #Data Preparation
 with st.sidebar: 
     st.header('Input features')
@@ -74,7 +74,9 @@ with st.sidebar:
     INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
     GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
     INT_Diff = st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
-
+    INT_DIFF = INT_NIG - INT_US 
+    st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
+    
     #create data frame
     input= {'INF_Nig': INF_Nig,
             'INF_US': INF_US, 
@@ -86,9 +88,10 @@ with st.sidebar:
             'INT_NIG': INT_NIG,
             'INT_US': INT_US,
             'GXP': GXP,
-            'INT_DIFF': INT_DIFF}
+            'INT_DIFF': INT_DIFF
+    }
     input_df = pd.DataFrame(input, index=[0])
-    input_penguins = pd.concat([input_df, X], axis=0)
+    input_penguins = pd.concat([input_df, data], axis=0)
 
 input_penguins
             
