@@ -64,7 +64,7 @@ with st.expander('Data Visualization'):
 #Data Preparation
 with st.sidebar: 
     st.header('Input features')
-    Period = st.date_input("Select a date")
+    Period = st.text_input("Write a date")
     INF_Nig = st.slider('Expected Inflation', 0.1, 50.0, 25.0)
     INF_US = st.slider('United States Inflation', 0.1, 20.0, 10.0) 
     NFA = st.slider('Net Foreign Asset', 5000000, 30000000, 10000000)
@@ -78,7 +78,7 @@ with st.sidebar:
     INT_DIFF = st.slider('Interest Rate Differential', 0.1, 50.0, 25.0) 
 
 
-    
+    data['Period'] = data['Period'].astype(str)
     #create data frame
     input= {
         'Period': Period,
