@@ -80,7 +80,8 @@ with st.sidebar:
 
     
     #create data frame
-    input= {'Period': Period
+    input= {
+            'Period': Period
             'INF_Nig': INF_Nig,
             'INF_US': INF_US, 
             'NFA': NFA,
