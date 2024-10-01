@@ -89,11 +89,18 @@ with st.sidebar:
             'INT_US': INT_US,
             'GXP': GXP,
             'INT_DIFF': INT_DIFF
-    }
-    input_df = pd.DataFrame(input, index=[0])
-    input_penguins = pd.concat([input_df, data], axis=0)
+   }
+    input_df = pd.DataFrame(input_data, index=[0])
+    
+    # Assuming 'X' is defined elsewhere in your code
+    # Make sure X is defined before concatenation
+    try:
+        input_penguins = pd.concat([input_df, X], axis=0)
+    except NameError:
+        st.error("Variable 'X' is not defined. Please ensure it's defined before this code.")
 
-input_penguins
+# Display the input penguins DataFrame
+st.write(input_penguins)
             
             
     
