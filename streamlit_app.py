@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import sklearn.ensemble import RandomForestClassifier
 
 #Title of the work
 st.title('Forcasting External Sector Variables')
@@ -106,8 +107,18 @@ with st.expander('Input features'):
     input
     st.write('**Combined penguins data**')
     input_penguins
-            
-            
-    
+
+input_row = input_penguins[:1]
+y = input_penguins['EXR']
+#Data Preparation        
+with st.expander('Data Preparation')
+    st.write('**Input Penguin**')
+    input_row
+    st.write('**y**')
+    y
+
+#Model Training
+clf = RandomForestClassifier()
+clf.fit()
             
 
