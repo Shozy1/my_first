@@ -97,7 +97,7 @@ with st.sidebar:
     
     # Assuming 'X' is defined elsewhere in your code
     # Make sure X is defined before concatenation
-    input_penguins = pd.concat([input_df, x], axis=0)
+    input_penguins = pd.concat([input_df, data], axis=0)
     
 
 # Display the input penguins DataFrame
