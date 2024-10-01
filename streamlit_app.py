@@ -90,7 +90,7 @@ with st.sidebar:
             'INT_US': INT_US,
             'GXP': GXP,
             'INT_DIFF': INT_DIFF}
-    input_df = pd.DataFrame(input_data, index=[0])
+    input_df = pd.DataFrame(input, index=[0])
     
     # Assuming 'X' is defined elsewhere in your code
     # Make sure X is defined before concatenation
