@@ -101,7 +101,7 @@ with st.sidebar:
     
 
 # Display the input penguins DataFrame
-input_penguins
+st.write(input_penguins)
             
             
     
