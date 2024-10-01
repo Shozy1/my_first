@@ -103,7 +103,7 @@ with st.sidebar:
         st.error("Variable 'X' is not defined. Please ensure it's defined before this code.")
 
 # Display the input penguins DataFrame
-st.write(input_penguins)
+input_penguins
             
             
     
