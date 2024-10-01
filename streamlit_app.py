@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import sklearn.ensemble import RandomForestClassifier
+#import sklearn.ensemble import RandomForestClassifier
 
 #Title of the work
 st.title('Forcasting External Sector Variables')
@@ -118,7 +118,7 @@ with st.expander('Data Preparation')
     y
 
 #Model Training
-clf = RandomForestClassifier()
-clf.fit()
+#clf = RandomForestClassifier()
+#clf.fit()
             
 
