@@ -74,8 +74,23 @@ with st.sidebar:
     INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
     GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
     INT_Diff = st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
-    INT_DIFF = INT_NIG - INT_US 
-    st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
+    def calculate_int_diff(int_nig, int_us):
+    return int_nig - int_us
+
+# Streamlit app
+st.header('Interest Rate Difference Calculator')
+
+# Input for Expected Interest Rate in Nigeria
+INT_NIG = st.number_input('Expected Interest Rate (Nigeria)', min_value=0.1, max_value=50.0, value=25.0)
+
+# Input for Expected Interest Rate in the United States
+INT_US = st.number_input('Expected Interest Rate (United States)', min_value=0.1, max_value=50.0, value=25.0)
+
+# Calculate the difference
+INT_DIFF = calculate_int_diff(INT_NIG, INT_US)
+
+# Display the result
+st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
     
     #create data frame
     input= {'INF_Nig': INF_Nig,
