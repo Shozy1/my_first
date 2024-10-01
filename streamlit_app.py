@@ -59,4 +59,39 @@ with st.expander('Data Visualization'):
     # Display the plot in Streamlit
     st.pyplot(fig)
     
- 
+#Data Preparation
+with st.sidebar: 
+    st.header('Input features')
+    INF_Nig = st.slider('Expected Inflation', 0.1, 50.0, 25.0')
+    INF_US = st.slider('United States Inflation', 0.1, 20.0, 10.0) 
+    NFA = st.slider('Net Foreign Asset', 5000000, 30000000, 10000000)
+    EXPT = st.slider('Export', 500000, 30000000, 12000000)
+    IMPT = st.slider('Import', 500000, 30000000, 12000000)
+    COP = ('Crude Oil Price', 10, 300, 150)
+    EXR = ('Exchange Rate', 100, 40000, 2000)
+    INT_NIG = st.slider('Expected Interest Rate', 0.1, 50.0, 25.0)
+    INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
+    GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
+    INT_Diff = INT_NIG - INT_US
+
+    #create data frame
+    input= {'INF_Nig': INF_Nig,
+            'INF_US': INF_US, 
+            'NFA': NFA,
+            'EXPT': EXPT,
+            'IMPT': IMPT,
+            'COP': COP,
+            'EXR': EXR,
+            'INT_NIG': INT_NIG,
+            'INT_US': INT_US,
+            'GXP': GXP,
+            'INT_DIFF': INT_DIFF}
+    input_df = pd.DataFrame(input, index=[0])
+    input_penguins = pd.concat([input_df, X], axis=0)
+
+input_penguins
+            
+            
+    
+            
+
