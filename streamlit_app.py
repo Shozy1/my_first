@@ -59,8 +59,7 @@ with st.expander('Data Visualization'):
     # Display the plot in Streamlit
     st.pyplot(fig)
 
-def calculate_int_diff(INT_NIG, INT_US):
-    return INT_NIG - INT_US
+
 
 #Data Preparation
 with st.sidebar: 
@@ -75,7 +74,7 @@ with st.sidebar:
     INT_NIG = st.slider('Expected Interest Rate', 0.1, 50.0, 25.0)
     INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
     GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
-    INT_DIFF = calculate_int_diff(INT_NIG, INT_US) 
+    INT_DIFF = st.slider('Interest Rate Differential', 0.1, 50.0, 25.0) 
 
 
     
