@@ -81,18 +81,18 @@ with st.sidebar:
     
     #create data frame
     input= {
-            'Period': Period,
-            'INF_Nig': INF_Nig,
-            'INF_US': INF_US, 
-            'NFA': NFA,
-            'EXPT': EXPT,
-            'IMPT': IMPT,
-            'COP': COP,
-            'EXR': EXR,
-            'INT_NIG': INT_NIG,
-            'INT_US': INT_US,
-            'GXP': GXP,
-            'INT_DIFF': INT_DIFF}
+        'Period': Period,
+        'INF_Nig': INF_Nig,
+        'INF_US': INF_US, 
+        'NFA': NFA,
+        'EXPT': EXPT,
+        'IMPT': IMPT,
+        'COP': COP,
+        'EXR': EXR,
+        'INT_NIG': INT_NIG,
+        'INT_US': INT_US,
+        'GXP': GXP,
+        'INT_DIFF': INT_DIFF}
     input_df = pd.DataFrame(input, index=[0])
     
     # Assuming 'X' is defined elsewhere in your code
