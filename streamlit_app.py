@@ -62,7 +62,7 @@ with st.expander('Data Visualization'):
 #Data Preparation
 with st.sidebar: 
     st.header('Input features')
-    INF_Nig = st.slider('Expected Inflation', 0.1, 50.0, 25.0')
+    INF_Nig = st.slider('Expected Inflation', 0.1, 50.0, 25.0)
     INF_US = st.slider('United States Inflation', 0.1, 20.0, 10.0) 
     NFA = st.slider('Net Foreign Asset', 5000000, 30000000, 10000000)
     EXPT = st.slider('Export', 500000, 30000000, 12000000)
