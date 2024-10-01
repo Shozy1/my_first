@@ -73,7 +73,7 @@ with st.sidebar:
     INT_NIG = st.slider('Expected Interest Rate', 0.1, 50.0, 25.0)
     INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
     GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
-    INT_Diff = st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
+    
 
 def calculate_int_diff(int_nig, int_us):
     return int_nig - int_us
