@@ -58,7 +58,8 @@ with st.expander('Data Visualization'):
 
     # Display the plot in Streamlit
     st.pyplot(fig)
-    
+
+INT_DIFF = INT_NIG - INT_US 
 #Data Preparation
 with st.sidebar: 
     st.header('Input features')
@@ -72,7 +73,7 @@ with st.sidebar:
     INT_NIG = st.slider('Expected Interest Rate', 0.1, 50.0, 25.0)
     INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
     GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
-    INT_Diff = INT_NIG - INT_US
+    INT_Diff = st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
 
     #create data frame
     input= {'INF_Nig': INF_Nig,
