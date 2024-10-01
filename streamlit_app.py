@@ -101,7 +101,11 @@ with st.sidebar:
     
 
 # Display the input penguins DataFrame
-st.write(input_penguins)
+write st.expander('Input features')
+    st.write('**Input penguins**')
+    input
+    st.write('**Combined penguins data**')
+    input_penguins
             
             
     
