@@ -75,7 +75,7 @@ with st.sidebar:
     INT_NIG = st.slider('Expected Interest Rate', 0.1, 50.0, 25.0)
     INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
     GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
-    INT_DIFF = st.slider('Interest Rat Differential', calculate_int_diff(INT_NIG, INT_US)) 
+    INT_DIFF = calculate_int_diff(INT_NIG, INT_US) 
 
 
     
@@ -90,8 +90,7 @@ with st.sidebar:
             'INT_NIG': INT_NIG,
             'INT_US': INT_US,
             'GXP': GXP,
-            'INT_DIFF': INT_DIFF
-   }
+            'INT_DIFF': INT_DIFF}
     input_df = pd.DataFrame(input_data, index=[0])
     
     # Assuming 'X' is defined elsewhere in your code
