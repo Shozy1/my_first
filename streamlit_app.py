@@ -74,7 +74,8 @@ with st.sidebar:
     INT_US = st.slider('United States Interest Rate', 0.1, 50.0, 25.0)
     GXP = st.slider('Government Expenditure', 50000, 1000000, 500000)
     INT_Diff = st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
-    def calculate_int_diff(int_nig, int_us):
+
+def calculate_int_diff(int_nig, int_us):
     return int_nig - int_us
 
 # Streamlit app
@@ -88,6 +89,9 @@ INT_US = st.number_input('Expected Interest Rate (United States)', min_value=0.1
 
 # Calculate the difference
 INT_DIFF = calculate_int_diff(INT_NIG, INT_US)
+
+# Display the result
+st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
 
 # Display the result
 st.write("Inflation Difference (INT_DIFF):", INT_DIFF)
