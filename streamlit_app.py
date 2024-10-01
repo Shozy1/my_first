@@ -95,7 +95,7 @@ with st.sidebar:
     # Assuming 'X' is defined elsewhere in your code
     # Make sure X is defined before concatenation
     try:
-        input_penguins = pd.concat([input_df, X], axis=0)
+        input_penguins = pd.concat([input_df, data], axis=0)
     except NameError:
         st.error("Variable 'X' is not defined. Please ensure it's defined before this code.")
 
