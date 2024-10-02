@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 #import sklearn.ensemble import RandomForestClassifier
-
+from streamlit_option_menu import option_menu
 #Title of the work
 st.title('Forcasting External Sector Variables')
 
