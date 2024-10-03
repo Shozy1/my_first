@@ -18,7 +18,7 @@ st.info('Become an External Sector Expert')
 
 
 # Create a navigation menu
-page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "Purchasing Power Parity", "PEER", "FEAR", "Google"])
+page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "PPP", "PEER", "FEAR", "Google"])
 
 # Define content for each page
 if page == "Home":
@@ -26,7 +26,6 @@ if page == "Home":
 elif page == "BEER":
     st.write("Welcome to the BEER page! 🍺")
     BEER.app()  # This should call the `app()` function in BEER.py
-
 elif page == "PPP":
     st.write("Welcome to the Purchasing Power Parity page! 💵")
     PPP.app()  # This should call the `app()` function in PPP.py
