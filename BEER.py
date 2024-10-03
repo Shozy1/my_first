@@ -1,10 +1,6 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-#import sklearn.ensemble import RandomForestClassifier
 
-#Title of the work
-st.title('Forcasting External Sector Variables')
-
-st.info('Become an External Sector Expert')
+def app():
+    st.title("Behavioral Equilibrium Exchange Rate (BEER) Model")
+    st.write("This is the BEER page. Here you can analyze the BEER model.")
+    # Add more content or interactivity for the BEER page
