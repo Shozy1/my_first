@@ -48,6 +48,8 @@ with st.expander("Data"):
   data = data.drop(['BDC'], axis=1)
   data
 
+
+st.metric("Change in Exchange Rate", value =1587.39, delta=1.5, delta_color="normal")
 with st.expander('Data Visualization'):
     # Create a figure and a set of subplots
     fig, ax1 = plt.subplots(figsize=(10, 6))
