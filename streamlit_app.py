@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import BEER  # Import the BEER module
 import PPP  # Import the PPP module
 import PEER
-import FEAR 
+import FEER 
 
 
 
@@ -20,7 +20,7 @@ st.info('Become an External Sector Expert')
 
 
 # Create a navigation menu
-page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "PPP", "PEER", "FEAR", "Google"])
+page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "PPP", "PEER", "FEER", "Google"])
 
 # Define content for each page
 if page == "Home":
@@ -34,9 +34,9 @@ elif page == "PPP":
 elif page == "PEER":
     st.write("Welcome to the PEER page! 👥")
     PEER.app()
-elif page == "FEAR":
-    st.write("Welcome to the FEAR page! 😱")
-    FEAR.app()
+elif page == "FEER":
+    st.write("Welcome to the FEER page! 😱")
+    FEER.app()
 elif page == "Google":
     st.write("[Visit Google 🌎](http://www.google.com)")
 
