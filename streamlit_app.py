@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import BEER.py
 import PPP.py
 #import sklearn.ensemble import RandomForestClassifier
 
@@ -21,10 +22,10 @@ if page == "Home":
     st.write("Welcome to the Home page! 🏠")
 elif page == "BEER":
     st.write("Welcome to the BEER page! 🍺")
-    BEER.app()
+    BEER.app(BEER.py)
 elif page == "Purchasing Power Parity":
     st.write("Welcome to the Purchasing Power Parity page! 💵")
-    PPP.app()
+    PPP.app(PPP.py)
 elif page == "PEER":
     st.write("Welcome to the PEER page! 👥")
 elif page == "FEAR":
