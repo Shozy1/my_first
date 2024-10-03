@@ -21,8 +21,10 @@ if page == "Home":
     st.write("Welcome to the Home page! 🏠")
 elif page == "BEER":
     st.write("Welcome to the BEER page! 🍺")
+    BEER.app()
 elif page == "Purchasing Power Parity":
     st.write("Welcome to the Purchasing Power Parity page! 💵")
+    PPP.app()
 elif page == "PEER":
     st.write("Welcome to the PEER page! 👥")
 elif page == "FEAR":
