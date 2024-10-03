@@ -3,9 +3,6 @@ numpy
 pandas
 scikit-learn
 BEER
-FEER
-PEER
-
 matplotlib
 PPP
 
