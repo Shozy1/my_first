@@ -3,7 +3,10 @@ numpy
 pandas
 scikit-learn
 BEER
-matplotlib
-PPP
 FEER
 PEER
+
+matplotlib
+PPP
+
+
