@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import PPP.py
 #import sklearn.ensemble import RandomForestClassifier
 
 #Title of the work
@@ -13,7 +14,7 @@ st.info('Become an External Sector Expert')
 
 
 # Create a navigation menu
-page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "Purchasing Power Parity", "PEER", "FEAR", "Google"])
+page = st.sidebar.selectbox("Select a page", ["Home", "BEER", "PPP", "PEER", "FEAR", "Google"])
 
 # Define content for each page
 if page == "Home":
