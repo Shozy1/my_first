@@ -6,6 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import BEER  # Import the BEER module
 import PPP  # Import the PPP module
+import PEER
+import FEAR 
 
 
 
@@ -31,8 +33,10 @@ elif page == "PPP":
     PPP.app()  # This should call the `app()` function in PPP.py
 elif page == "PEER":
     st.write("Welcome to the PEER page! 👥")
+    PEER.app()
 elif page == "FEAR":
     st.write("Welcome to the FEAR page! 😱")
+    FEAR.app()
 elif page == "Google":
     st.write("[Visit Google 🌎](http://www.google.com)")
 
