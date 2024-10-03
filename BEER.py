@@ -31,6 +31,11 @@ def app():
     # Split data into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+    X_train = X_train.select_dtypes(include=[np.number])  # Select only numeric columns
+    y_train = y_train.astype(float)  # Convert target column to numeric
+
+    X_train = X_train.dropna()  # Dropping rows with missing values
+    y_train = y_train.dropna()
     # Train a simple Linear Regression model
     model = LinearRegression()
     model.fit(X_train, y_train)
