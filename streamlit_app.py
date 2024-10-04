@@ -78,7 +78,7 @@ with tab1
         st.pyplot(fig)
 
 with tab2
-    tab2.write("Exchange rate and Interest rate
+    tab2.write("Exchange rate and Interest rate)
     fig, ax1 = plt.subplots(figsize=(10, 6))
     
         # Plotting INF_US and INF_Nig on the primary y-axis
