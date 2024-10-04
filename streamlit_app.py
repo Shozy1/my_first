@@ -148,7 +148,37 @@ with tab3:
     st.pyplot(fig)
 
 
-               
+with tab4:
+    tab4.write("Purchasing power parity")    
+    # Assuming 'data' contains 'Period', 'Actual_EXR', 'Price_US', and 'Price_NIG'
+    
+    # Step 1: Calculate the PPP Exchange Rate
+    # PPP Exchange Rate = Price_US / Price_NIG
+    data['PPP_EXR'] = data['INF_US'] / data['INF_Nig']
+    
+    # Step 2: Calculate Misalignment
+    # Misalignment = ((Actual_EXR - PPP_EXR) / PPP_EXR) * 100
+    data['Misalignment'] = ((data['EXR'] - data['PPP_EXR']) / data['PPP_EXR']) * 100
+    
+    # Step 3: Plot Misalignment over time
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    # Plot the Misalignment
+    ax.plot(data['Period'], data['Misalignment'], label='EXR Misalignment (%)', color='red', linewidth=2, marker='o')
+    
+    # Labeling the plot
+    ax.set_title('Exchange Rate Misalignment (%) over Periods using PPP')
+    ax.set_xlabel('Period')
+    ax.set_ylabel('Misalignment (%)')
+    ax.legend(loc='upper left')
+    
+    # Reduce x-axis labels for better clarity (showing every 5th label)
+    ax.set_xticks(data['Period'][::5])  # Show every 5th period
+    plt.xticks(rotation=45)
+    
+    # Display the plot in Streamlit
+    st.pyplot(fig)
+
 
 #Data Preparation
 with st.sidebar: 
