@@ -54,7 +54,6 @@ st.metric(label="Change in Exchange Rate", value =1587.39, delta=1.5, delta_colo
 tab1, tab2, tab3, tab4 = st.tabs(["Exchange rate and Inflation", "Exchange rate and Interest Rate", " Exchange rate and Differentials", "Exchange rate and Others"])
 
 with tab1:
-    st.expander('Data Visualization'):
         # Create a figure and a set of subplots
         fig, ax1 = plt.subplots(figsize=(10, 6))
     
