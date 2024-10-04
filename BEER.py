@@ -1,6 +1,10 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+import pandas as pd
+
+
+ data = pd.read_csv('exr.csv')
 
 def app():
     # Assuming `data` is the full DataFrame loaded earlier
