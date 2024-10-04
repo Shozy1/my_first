@@ -81,13 +81,13 @@ with tab2:
     fig, ax1 = plt.subplots(figsize=(10, 6))
     
      # Plotting INF_US and INF_Nig on the primary y-axis
-    ax1.scatter(data['Period'], data['INF_US'], label='INF_US', alpha=0.5, color='blue')
-    ax1.scatter(data['Period'], data['INF_Nig'], label='INF_Nig', alpha=0.5, color='orange')
+    ax1.scatter(data['Period'], data['INT_US'], label='INT_US', alpha=0.5, color='blue')
+    ax1.scatter(data['Period'], data['INT_NIG'], label='INT_NIG', alpha=0.5, color='orange')
         
     # Labels and title for the primary y-axis
-    ax1.set_title('Scatter Plot of Inflation Rates against Period')
+    ax1.set_title('Scatter Plot of Interest Rates against Period')
     ax1.set_xlabel('Period')
-    ax1.set_ylabel('Inflation Rates')
+    ax1.set_ylabel('Interest Rates')
     ax1.legend(loc='upper left')
     
         # Creating a secondary y-axis for EXR
