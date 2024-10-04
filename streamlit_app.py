@@ -48,32 +48,60 @@ with st.expander("Data"):
   data = data.drop(['BDC'], axis=1)
   data
 
-
+#set metric
 st.metric(label="Change in Exchange Rate", value =1587.39, delta=1.5, delta_color="normal")
-with st.expander('Data Visualization'):
-    # Create a figure and a set of subplots
-    fig, ax1 = plt.subplots(figsize=(10, 6))
 
-    # Plotting INF_US and INF_Nig on the primary y-axis
-    ax1.scatter(data['Period'], data['INF_US'], label='INF_US', alpha=0.5, color='blue')
-    ax1.scatter(data['Period'], data['INF_Nig'], label='INF_Nig', alpha=0.5, color='orange')
+tab1, tab2, tab3, tab4 = st.tabs(["Exchange rate and Inflation", "Exchange rate and Interest Rate", " Exchange rate and Differentials", "Exchange rate and Others"])
+
+with tab1
+    st.expander('Data Visualization'):
+        # Create a figure and a set of subplots
+        fig, ax1 = plt.subplots(figsize=(10, 6))
     
-    # Labels and title for the primary y-axis
-    ax1.set_title('Scatter Plot of Inflation Rates against Period')
-    ax1.set_xlabel('Period')
-    ax1.set_ylabel('Inflation Rates')
-    ax1.legend(loc='upper left')
+        # Plotting INF_US and INF_Nig on the primary y-axis
+        ax1.scatter(data['Period'], data['INF_US'], label='INF_US', alpha=0.5, color='blue')
+        ax1.scatter(data['Period'], data['INF_Nig'], label='INF_Nig', alpha=0.5, color='orange')
+        
+        # Labels and title for the primary y-axis
+        ax1.set_title('Scatter Plot of Inflation Rates against Period')
+        ax1.set_xlabel('Period')
+        ax1.set_ylabel('Inflation Rates')
+        ax1.legend(loc='upper left')
+    
+        # Creating a secondary y-axis for EXR
+        ax2 = ax1.twinx()
+        ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=2)
+        ax2.set_ylabel('EXR', color='green')  # Label for the secondary y-axis
+        ax2.tick_params(axis='y', labelcolor='green')
+    
+        # Display the plot in Streamlit
+        st.pyplot(fig)
 
-    # Creating a secondary y-axis for EXR
-    ax2 = ax1.twinx()
-    ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=2)
-    ax2.set_ylabel('EXR', color='green')  # Label for the secondary y-axis
-    ax2.tick_params(axis='y', labelcolor='green')
+with tab2
+    tab2.write("Exchange rate and Interest rate
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+    
+        # Plotting INF_US and INF_Nig on the primary y-axis
+        ax1.scatter(data['Period'], data['INF_US'], label='INF_US', alpha=0.5, color='blue')
+        ax1.scatter(data['Period'], data['INF_Nig'], label='INF_Nig', alpha=0.5, color='orange')
+        
+        # Labels and title for the primary y-axis
+        ax1.set_title('Scatter Plot of Inflation Rates against Period')
+        ax1.set_xlabel('Period')
+        ax1.set_ylabel('Inflation Rates')
+        ax1.legend(loc='upper left')
+    
+        # Creating a secondary y-axis for EXR
+        ax2 = ax1.twinx()
+        ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=2)
+        ax2.set_ylabel('EXR', color='green')  # Label for the secondary y-axis
+        ax2.tick_params(axis='y', labelcolor='green')
+    
+        # Display the plot in Streamlit
+        st.pyplot(fig)
 
-    # Display the plot in Streamlit
-    st.pyplot(fig)
 
-
+               
 
 #Data Preparation
 with st.sidebar: 
