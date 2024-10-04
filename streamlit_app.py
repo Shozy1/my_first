@@ -108,6 +108,40 @@ with tab2:
 
 
 
+
+data['INT1_Diff'] = data['INT_NIG'] - data['INT_US']
+data['INF_Diff'] = data['INF_Nig'] - data['INF_US']
+
+with tab3:
+    tab3.write("Interest Rate and Inflation Differences along with Exchange Rate")
+    
+    # Create figure and axes
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+    
+    # Plotting the differences on the primary y-axis
+    ax1.plot(data['Period'], data['INT1_Diff'], label='Interest Rate Difference (INT_NIG - INT_US)', color='blue', linewidth=2, marker='o')
+    ax1.plot(data['Period'], data['INF_Diff'], label='Inflation Difference (INF_Nig - INF_US)', color='orange', linewidth=2, marker='x')
+
+    # Labels and title for the primary y-axis
+    ax1.set_title('Interest Rate and Inflation Differences vs Exchange Rate')
+    ax1.set_xlabel('Period')
+    ax1.set_ylabel('Differences (%)')
+    ax1.legend(loc='upper left')
+    
+    # Reduce x-axis labels for better clarity (showing every 5th label)
+    ax1.set_xticks(data['Period'][::5])  # Show every 5th period
+    plt.xticks(rotation=45)
+    
+    # Secondary y-axis for EXR (Exchange Rate)
+    ax2 = ax1.twinx()
+    ax2.plot(data['Period'], data['EXR'], label='Exchange Rate (₦)', color='green', linewidth=3, linestyle='--')
+    ax2.set_ylabel('Exchange Rate (₦)', color='green')  # Label for the secondary y-axis
+    ax2.tick_params(axis='y', labelcolor='green')
+    
+    # Display the plot in Streamlit
+    st.pyplot(fig)
+
+
                
 
 #Data Preparation
