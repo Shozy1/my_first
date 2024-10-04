@@ -78,26 +78,34 @@ with tab1:
 
 with tab2:
     tab2.write("Exchange rate and Interest rate")
+    
+    # Create figure and axes
     fig, ax1 = plt.subplots(figsize=(10, 6))
     
-     # Plotting INF_US and INF_Nig on the primary y-axis
-    ax1.scatter(data['Period'], data['INT_US'], label='INT_US', alpha=0.5, color='blue')
-    ax1.scatter(data['Period'], data['INT_NIG'], label='INT_NIG', alpha=0.5, color='orange')
-        
+    # Bar plot for interest rates on the primary y-axis
+    width = 0.4  # Width of the bars
+    
+    ax1.bar(data['Period'], data['INT_US'], width=width, label='INT_US', color='blue', alpha=0.7)
+    ax1.bar(data['Period'], data['INT_NIG'], width=width, label='INT_NIG', color='orange', alpha=0.7, bottom=data['INT_US'])
+
     # Labels and title for the primary y-axis
-    ax1.set_title('Scatter Plot of Interest Rates against Period')
+    ax1.set_title('Exchange Rate and Interest Rates over Time')
     ax1.set_xlabel('Period')
-    ax1.set_ylabel('Interest Rates')
+    ax1.set_ylabel('Interest Rates (%)')
     ax1.legend(loc='upper left')
     
-        # Creating a secondary y-axis for EXR
+    # Rotate x-axis labels for better readability
+    plt.xticks(rotation=45)
+    
+    # Secondary y-axis for EXR (Exchange Rate)
     ax2 = ax1.twinx()
-    ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=2)
-    ax2.set_ylabel('EXR', color='green')  # Label for the secondary y-axis
+    ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=3, marker='o')
+    ax2.set_ylabel('Exchange Rate (₦)', color='green')  # Label for the secondary y-axis
     ax2.tick_params(axis='y', labelcolor='green')
     
-        # Display the plot in Streamlit
+    # Display the plot in Streamlit
     st.pyplot(fig)
+
 
 
                
