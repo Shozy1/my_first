@@ -53,7 +53,7 @@ st.metric(label="Change in Exchange Rate", value =1587.39, delta=1.5, delta_colo
 
 tab1, tab2, tab3, tab4 = st.tabs(["Exchange rate and Inflation", "Exchange rate and Interest Rate", " Exchange rate and Differentials", "Exchange rate and Others"])
 
-with tab1
+with tab1:
     st.expander('Data Visualization'):
         # Create a figure and a set of subplots
         fig, ax1 = plt.subplots(figsize=(10, 6))
@@ -77,28 +77,28 @@ with tab1
         # Display the plot in Streamlit
         st.pyplot(fig)
 
-with tab2
+with tab2:
     tab2.write("Exchange rate and Interest rate")
     fig, ax1 = plt.subplots(figsize=(10, 6))
     
-        # Plotting INF_US and INF_Nig on the primary y-axis
-        ax1.scatter(data['Period'], data['INF_US'], label='INF_US', alpha=0.5, color='blue')
-        ax1.scatter(data['Period'], data['INF_Nig'], label='INF_Nig', alpha=0.5, color='orange')
+     # Plotting INF_US and INF_Nig on the primary y-axis
+    ax1.scatter(data['Period'], data['INF_US'], label='INF_US', alpha=0.5, color='blue')
+    ax1.scatter(data['Period'], data['INF_Nig'], label='INF_Nig', alpha=0.5, color='orange')
         
-        # Labels and title for the primary y-axis
-        ax1.set_title('Scatter Plot of Inflation Rates against Period')
-        ax1.set_xlabel('Period')
-        ax1.set_ylabel('Inflation Rates')
-        ax1.legend(loc='upper left')
+    # Labels and title for the primary y-axis
+    ax1.set_title('Scatter Plot of Inflation Rates against Period')
+    ax1.set_xlabel('Period')
+    ax1.set_ylabel('Inflation Rates')
+    ax1.legend(loc='upper left')
     
         # Creating a secondary y-axis for EXR
-        ax2 = ax1.twinx()
-        ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=2)
-        ax2.set_ylabel('EXR', color='green')  # Label for the secondary y-axis
-        ax2.tick_params(axis='y', labelcolor='green')
+    ax2 = ax1.twinx()
+    ax2.plot(data['Period'], data['EXR'], label='EXR', color='green', linewidth=2)
+    ax2.set_ylabel('EXR', color='green')  # Label for the secondary y-axis
+    ax2.tick_params(axis='y', labelcolor='green')
     
         # Display the plot in Streamlit
-        st.pyplot(fig)
+    st.pyplot(fig)
 
 
                
