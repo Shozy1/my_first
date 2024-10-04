@@ -95,7 +95,7 @@ with tab2:
     ax1.legend(loc='upper left')
     
     # Rotate x-axis labels for better readability
-    plt.xticks(rotation=45)
+    plt.xticks(rotation=90)
     
     # Secondary y-axis for EXR (Exchange Rate)
     ax2 = ax1.twinx()
