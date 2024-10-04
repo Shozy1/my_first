@@ -50,11 +50,11 @@ with st.expander("Data"):
 
 data['EXR_Depreciation'] = data['EXR'].pct_change() * 100  # Calculate the percentage change and multiply by 100
 
-# Fill the first row (which will be NaN after pct_change) with 0 or some other suitable value
-data['EXR_Depreciation'].fillna(0, inplace=True)
-#set metric
-st.metric(label="Change in Exchange Rate", value =1587.39, delta= data['EXR_Depreciation'], delta_color="normal")
+# Extract the latest exchange rate depreciation (for the most recent period)
+latest_depreciation = data['EXR_Depreciation'].iloc[-1]
 
+# Use st.metric with the latest depreciation value
+st.metric(label="Change in Exchange Rate", value=1587.39, delta=f"{latest_depreciation:.2f}%", delta_color="normal")
 
 
 tab1, tab2, tab3, tab4 = st.tabs(["Exchange rate and Inflation", "Exchange rate and Interest Rate", " Exchange rate and Differentials", "Exchange rate and Others"])
